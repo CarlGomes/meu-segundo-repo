@@ -1,0 +1,93 @@
+@keyframes minha-animacao {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(100px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+body {
+    background-color: antiquewhite;
+    color: white;
+}
+
+@media(max-width:600px) , (orientation: landscape) {
+    body{
+        background-color:red;
+        color: rgb(198, 75, 202);
+    }
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(2, 3fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "header nav"
+    "main sidebar"
+    "content footer";
+    gap: 20px;
+    
+}
+
+#item1 {
+background-color: aquamarine;
+grid-area: header;
+/*transition-property: all;
+transition-duration: 0.5s;
+transition-timing-function: ease-in-out;
+transition-delay: 0s;*/
+
+transition: all 0.5s ease-in-out 0s;
+}
+
+#item1:hover {
+    font-size: 100px;
+}
+
+#item2 {
+background-color: blue;
+grid-area: nav;
+width: 100px;
+height: 100px;
+opacity: 50;
+background-color: blue;
+animation-name: minha-animacao;
+animation-duration: 3s;
+animation-iteration-count: infinite;
+animation-timing-function: ease-in-out;
+animation-timing-function: forwards;
+}
+
+#item3 {
+background-color: brown;
+grid-area: sidebar;
+}
+
+#item4 {
+background-color: burlywood;
+grid-area: main;
+    }
+
+    #item5 {
+background-color: purple;
+grid-area: content;
+        }
+
+ #item6 {
+background-color: forestgreen;
+grid-area: footer;
+            }
+
+main > div > div {
+    
+}
